@@ -235,7 +235,8 @@ def create_bim_house_frame():
     building = Arch.makeBuilding([floor])
     building.Label = "Residential House"
     building.Description = "Single-story residential timber frame house"
-    building.BuildingType = "Residential"
+    # Note: BuildingType is not a standard property in FreeCAD Arch::Building
+    # The building type is implicit in the IFC export based on the structure
     print(f"  ✓ Created Building containing Floor")
 
     # Create Site (optional but recommended for IFC)
